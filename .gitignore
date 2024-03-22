@@ -1,0 +1,6 @@
+models/*
+vectorstores/*
+save.py
+data/*
+backup
+__pycache__
