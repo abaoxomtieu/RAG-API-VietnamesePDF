@@ -44,3 +44,31 @@ def create_db_from__one_file(pdf_file):
     db.save_local(vector_db_path)
     print("Success")
     return db
+
+create_db_from_files()
+
+    
+## transfrom text into vectorDB
+raw_text = """ Transformer attention thông thường thực hiện attention trên toàn bộ 
+feature map nó dẫn đến độ phức tạp của thuật toán tăng cao khi spatial size của feature map tăng. 
+Tác giả đưa ra một kiểu attention mới mà chỉ attend 
+vào một số sample locations (sample locations này cũng không cố định mà được học trong 
+quá trình training tương tự như trong deformable convolution) 
+qua đó giúp giảm độ phức tạp của thuật toán và làm giảm thời gian training mô hình. """
+create_db_from_text(raw_text)
+
+
+
+## transfrom pdf file into vectorDB
+pdf_file = "./data//Le Van Hao Phuong phap NCKH-XHNV-2015.pdf"
+create_db_from__one_file(pdf_file)
+
+
+
+## transfrom folder contain pdf file into vectorDB
+create_db_from_files()
+
+
+
+# Remove all vectors DB
+remove_all_vectorstores()
